@@ -1,8 +1,6 @@
-Index: linux-6.12.49/arch/arm64/boot/dts/qcom/msm8916.dtsi
-===================================================================
---- linux-6.12.49.orig/arch/arm64/boot/dts/qcom/msm8916.dtsi
-+++ linux-6.12.49/arch/arm64/boot/dts/qcom/msm8916.dtsi
-@@ -1882,6 +1882,30 @@
+--- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+@@ -1884,6 +1884,30 @@
  			};
  		};
  
