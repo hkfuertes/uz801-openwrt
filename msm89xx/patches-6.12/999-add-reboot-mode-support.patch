@@ -18,7 +18,7 @@
 +				mode-bootloader = <0x77665500>;
 +				mode-recovery = <0x77665502>;
 +				mode-fastboot = <0x77665500>;
-+				mode-edl = <0x2dload00>;
++				mode-edl = <0x77665503>;
 +				mode-download = <0x646f776e>;
 +			};
 +
