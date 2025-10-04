@@ -1,0 +1,20 @@
+--- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+@@ -0,0 +1,17 @@
++@@
++ 		tcsr_mutex: hwlock@1905000 {
++ 			compatible = "qcom,tcsr-mutex";
++ 			reg = <0x01905000 0x20000>;
++ 			#hwlock-cells = <1>;
+++			reboot-mode {
+++				compatible = "syscon-reboot-mode";
+++				syscon = <&tcsr_mutex>;
+++				/* Boot reason magic register offset in TCSR */
+++				offset = <0x193d100>;
+++				/* Standard and Qualcomm/LK2nd magic values */
+++				mode-normal = <0x00000000>;
+++				mode-bootloader = <0x77665500>;
+++				mode-edl = <0x77665501>;
+++				mode-download = <0x77665501>;
+++			};
++ 		};
