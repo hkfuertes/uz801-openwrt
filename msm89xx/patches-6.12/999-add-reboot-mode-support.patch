@@ -1,0 +1,35 @@
+Index: linux-6.12.49/arch/arm64/boot/dts/qcom/msm8916.dtsi
+===================================================================
+--- linux-6.12.49.orig/arch/arm64/boot/dts/qcom/msm8916.dtsi
++++ linux-6.12.49/arch/arm64/boot/dts/qcom/msm8916.dtsi
+@@ -1882,6 +1882,30 @@
+ 			};
+ 		};
+ 
++		imem@8600000 {
++			compatible = "qcom,msm8916-imem", "syscon", "simple-mfd";
++			reg = <0x08600000 0x1000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0x0 0x08600000 0x1000>;
++
++			reboot-mode@65c {
++				compatible = "syscon-reboot-mode";
++				reg = <0x65c 0x4>;
++				mode-normal = <0x77665501>;
++				mode-bootloader = <0x77665500>;
++				mode-recovery = <0x77665502>;
++				mode-fastboot = <0x77665500>;
++				mode-edl = <0x2dload00>;
++				mode-download = <0x646f776e>;
++			};
++
++			restart_reason@65c {
++				compatible = "qcom,msm-imem-restart_reason";
++				reg = <0x65c 0x4>;
++			};
++		};
++
+ 		spmi_bus: spmi@200f000 {
+ 			compatible = "qcom,spmi-pmic-arb";
+ 			reg = <0x0200f000 0x001000>,
