@@ -10,6 +10,8 @@ define Package/reboot-mode
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=Reboot mode utility for Qualcomm devices
+  DEPENDS:=@(TARGET_msm89xx)
+  KCONFIG:=CONFIG_DEVMEM=y
 endef
 
 define Build/Compile
